@@ -1,0 +1,35 @@
+{
+  "articles": [
+    {
+      "id": "1",
+      "title": "مقاله اول",
+      "content": "این محتوای مقاله اول است. اینجا می‌توانید توضیحات بیشتری اضافه کنید.",
+      "image": "/arctic-fox.webp"
+    },
+    {
+      "id": "2",
+      "title": "مقاله دوم",
+      "content": "این محتوای مقاله دوم است. اینجا می‌توانید توضیحات بیشتری اضافه کنید.",
+      "image": "/elephants.webp"
+    }
+  ],
+  "todos": [
+    {
+      "id": "2",
+      "title": "Design to-do list page",
+      "completed": true
+    },
+    {
+      "id": "018e",
+      "title": "dqwdwqd",
+      "completed": true,
+      "category": "Work",
+      "createdAt": "2025-03-09T16:47:29.892Z"
+    },
+    {
+      "id": "4c11",
+      "title": "sxs",
+      "completed": true
+    }
+  ]
+}

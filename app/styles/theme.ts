@@ -3,6 +3,7 @@ import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   palette: {
+    mode: 'light', // Force light mode regardless of system settings
     primary: {
       main: '#1976d2', // A nice blue for primary actions (customize as needed)
     },

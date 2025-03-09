@@ -1,18 +1,26 @@
-'use client'
-
-import { Box, Container, Typography, Card, CardMedia, CardContent } from "@mui/material";
+import { Container, Typography, Card, CardMedia, CardContent } from "@mui/material";
 import { notFound } from "next/navigation";
 
+export const dynamic = "force-dynamic"; // <-- Add this line explicitly
+
 async function fetchArticle(articleId: string) {
-  const res = await fetch(`http://localhost:3001/articles/${articleId}`);
-  if (!res.ok) {
-    return null;
-  }
+  const res = await fetch(`http://localhost:3001/articles/${articleId}`, {
+    cache: 'no-store'
+  });
+
+  if (!res.ok) return null;
+
   return res.json();
 }
 
-export default async function ArticlePage({ params }: { params: { articleId: string } }) {
-  const article = await fetchArticle(params.articleId);
+interface ArticlePageProps {
+  params: {
+    articleId: string;
+  };
+}
+
+export default async function ArticlePage({ params }: ArticlePageProps) {
+  const article = await fetchArticle(params?.articleId);
 
   if (!article) {
     notFound();
