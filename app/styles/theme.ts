@@ -12,7 +12,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'Roboto, Arial, sans-serif', // Default MUI font (customize as needed)
+    fontFamily: 'IRANSansXV, Roboto, Arial, sans-serif',
   },
 });
 

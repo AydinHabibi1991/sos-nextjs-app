@@ -20,7 +20,13 @@ interface ArticlePageProps {
 }
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
-  const article = await fetchArticle(params?.articleId);
+  const { articleId } = await params; // Explicitly await params
+
+  if (!articleId) {
+    notFound();
+  }
+
+  const article = await fetchArticle(articleId);
 
   if (!article) {
     notFound();

@@ -27,13 +27,10 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl">
       <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
+        
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className="font-iransans"
       >
         <Header />
         <ThemeClient>{children}</ThemeClient>
