@@ -8,6 +8,7 @@ import {
   Typography,
   Alert,
 } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import { FilterTodos } from "./FilterTodos";
 import { AddTodoForm } from "./AddTodoForm";
 import { TodoList } from "./TodoList";
@@ -21,8 +22,11 @@ export default function TodoListClient() {
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
   const [todoToDelete, setTodoToDelete] = useState<number | null>(null);
 
+  const { t, i18n } = useTranslation();
   const { todos, isLoading, error, handleAddTodo, handleToggleTodo, handleDeleteTodo } =
     useTodos();
+
+  const isRtl = i18n.language === "fa"; // Check if language is Farsi for RTL
 
   const onAddTodo = () => {
     handleAddTodo(newTodo);
@@ -53,6 +57,7 @@ export default function TodoListClient() {
         display: "flex",
         flexDirection: "column",
         gap: { xs: 2, sm: 3 },
+        direction: isRtl ? "rtl" : "ltr", // RTL for Farsi
       }}
     >
       <Paper
@@ -77,7 +82,7 @@ export default function TodoListClient() {
             fontSize: { xs: "1.5rem", sm: "2rem" },
           }}
         >
-          Task Manager
+          {t("taskManager")}
         </Typography>
 
         {error && (

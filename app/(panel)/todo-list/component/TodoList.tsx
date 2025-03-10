@@ -3,6 +3,7 @@ import React from "react";
 import { Box, List, Typography, CircularProgress } from "@mui/material";
 import { Todo, FilterOption } from "../../../../types/todo";
 import { TodoItem } from "./TodoItem";
+import { useTranslation } from "react-i18next";
 
 interface TodoListProps {
   todos: Todo[];
@@ -19,6 +20,9 @@ export const TodoList: React.FC<TodoListProps> = ({
   onToggleTodo,
   onDeleteClick,
 }) => {
+  const { t, i18n } = useTranslation();
+  const isRtl = i18n.language === "fa"; // Check if language is Farsi for RTL
+
   const filteredTodos = todos.filter((todo) => {
     if (filter === "completed") return todo.completed;
     if (filter === "incomplete") return !todo.completed;
@@ -26,22 +30,22 @@ export const TodoList: React.FC<TodoListProps> = ({
   });
 
   return (
-    <Box>
+    <Box sx={{ direction: isRtl ? "rtl" : "ltr" }}>
       {isLoading ? (
         <Box sx={{ display: "flex", justifyContent: "center", my: { xs: 4, sm: 6 } }}>
-          <CircularProgress aria-label="Loading tasks" />
+          <CircularProgress aria-label={t("loadingTasks")} />
         </Box>
       ) : filteredTodos.length === 0 ? (
         <Typography
           sx={{
             textAlign: "center",
             color: "text.secondary",
-            py: { xs: 4, sm: 6 }, // Fixed syntax: removed invalid text
+            py: { xs: 4, sm: 6 },
             fontStyle: "italic",
             fontSize: { xs: "1rem", sm: "1.2rem" },
           }}
         >
-          No tasks found. Add a new task to get started!
+          {t("noTasks")}
         </Typography>
       ) : (
         <List sx={{ px: { xs: 0, sm: 1 } }}>

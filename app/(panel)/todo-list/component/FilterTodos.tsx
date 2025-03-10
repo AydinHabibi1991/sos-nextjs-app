@@ -2,6 +2,7 @@
 import React from "react";
 import { Box, ToggleButton, ToggleButtonGroup } from "@mui/material";
 import { FilterOption } from "@/types/todo";
+import { useTranslation } from "react-i18next";
 
 interface FilterTodosProps {
   filter: FilterOption;
@@ -14,6 +15,9 @@ export const FilterTodos: React.FC<FilterTodosProps> = ({
   onFilterChange,
   disabled,
 }) => {
+  const { t, i18n } = useTranslation();
+  const isRtl = i18n.language === "fa"; // Check if language is Farsi for RTL
+
   const handleFilterChange = (
     event: React.MouseEvent<HTMLElement>,
     newFilter: FilterOption | null
@@ -24,12 +28,19 @@ export const FilterTodos: React.FC<FilterTodosProps> = ({
   };
 
   return (
-    <Box sx={{ display: "flex", justifyContent: "center", mb: { xs: 2, sm: 3 } }}>
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        mb: { xs: 2, sm: 3 },
+        direction: isRtl ? "rtl" : "ltr", // RTL for Farsi
+      }}
+    >
       <ToggleButtonGroup
         value={filter}
         exclusive
         onChange={handleFilterChange}
-        aria-label="Filter tasks"
+        aria-label={t("filterTasks")}
         disabled={disabled}
         size="small"
         sx={{
@@ -53,14 +64,14 @@ export const FilterTodos: React.FC<FilterTodosProps> = ({
           },
         }}
       >
-        <ToggleButton value="all" aria-label="Show all tasks">
-          All
+        <ToggleButton value="all" aria-label={t("all")}>
+          {t("all")}
         </ToggleButton>
-        <ToggleButton value="completed" aria-label="Show completed tasks">
-          Completed
+        <ToggleButton value="completed" aria-label={t("completed")}>
+          {t("completed")}
         </ToggleButton>
-        <ToggleButton value="incomplete" aria-label="Show incomplete tasks">
-          Incomplete
+        <ToggleButton value="incomplete" aria-label={t("incomplete")}>
+          {t("incomplete")}
         </ToggleButton>
       </ToggleButtonGroup>
     </Box>
