@@ -1,4 +1,3 @@
-// src/components/todo/TodoItem.tsx
 import React from "react";
 import {
   Paper,
@@ -25,7 +24,7 @@ export const TodoItem: React.FC<TodoItemProps> = ({
   isLoading,
 }) => {
   const { t, i18n } = useTranslation();
-  const isRtl = i18n.language === "fa"; // Check if language is Farsi for RTL
+  const isRtl = i18n.language === "fa"; 
 
   return (
     <Paper
@@ -49,8 +48,8 @@ export const TodoItem: React.FC<TodoItemProps> = ({
           display: "flex",
           alignItems: "center",
           gap: 1,
-          flexDirection: isRtl ? "row-reverse" : "row", // Reverse for RTL
-          direction: isRtl ? "rtl" : "ltr", // RTL for Farsi
+          flexDirection: isRtl ? "row-reverse" : "row", 
+          direction: isRtl ? "rtl" : "ltr", 
         }}
       >
         <Checkbox
@@ -61,7 +60,7 @@ export const TodoItem: React.FC<TodoItemProps> = ({
           sx={{
             color: todo.completed ? "success.main" : "primary.main",
             p: { xs: 0, sm: 1 },
-            order: isRtl ? 2 : 0, // Move checkbox to the end for RTL
+            order: isRtl ? 2 : 0, 
           }}
         />
         <ListItemText
@@ -72,7 +71,7 @@ export const TodoItem: React.FC<TodoItemProps> = ({
             fontSize: { xs: "1rem", sm: "1.1rem" },
             fontWeight: "medium",
             wordBreak: "break-word",
-            textAlign: isRtl ? "right" : "left", // Align text right for RTL
+            textAlign: isRtl ? "right" : "left",
           }}
         />
         <IconButton
@@ -87,7 +86,7 @@ export const TodoItem: React.FC<TodoItemProps> = ({
               transform: "scale(1.1)",
             },
             p: { xs: 0, sm: 1 },
-            order: isRtl ? -1 : 0, // Move delete button to the start for RTL
+            order: isRtl ? -1 : 0, 
           }}
         >
           <DeleteIcon />

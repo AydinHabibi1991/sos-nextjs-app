@@ -1,4 +1,3 @@
-// src/components/todo/TodoListClient.tsx
 "use client";
 
 import React, { useState } from "react";
@@ -26,7 +25,7 @@ export default function TodoListClient() {
   const { todos, isLoading, error, handleAddTodo, handleToggleTodo, handleDeleteTodo } =
     useTodos();
 
-  const isRtl = i18n.language === "fa"; // Check if language is Farsi for RTL
+  const isRtl = i18n.language === "fa"; 
 
   const onAddTodo = () => {
     handleAddTodo(newTodo);
@@ -57,7 +56,7 @@ export default function TodoListClient() {
         display: "flex",
         flexDirection: "column",
         gap: { xs: 2, sm: 3 },
-        direction: isRtl ? "rtl" : "ltr", // RTL for Farsi
+        direction: isRtl ? "rtl" : "ltr", 
       }}
     >
       <Paper

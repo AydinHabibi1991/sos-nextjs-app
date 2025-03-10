@@ -1,7 +1,7 @@
 import { Container, Typography, Card, CardMedia, CardContent } from "@mui/material";
 import { notFound } from "next/navigation";
 
-export const dynamic = "force-dynamic"; // <-- Add this line explicitly
+export const dynamic = "force-dynamic";
 
 async function fetchArticle(articleId: string) {
   const res = await fetch(`http://localhost:3001/articles/${articleId}`, {
@@ -20,7 +20,7 @@ interface ArticlePageProps {
 }
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
-  const { articleId } = await params; // Explicitly await params
+  const { articleId } = await params; 
 
   if (!articleId) {
     notFound();

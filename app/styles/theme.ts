@@ -1,14 +1,13 @@
-// styles/theme.ts
 import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   palette: {
-    mode: 'light', // Force light mode regardless of system settings
+    mode: 'light', 
     primary: {
-      main: '#1976d2', // A nice blue for primary actions (customize as needed)
+      main: '#1976d2', 
     },
     secondary: {
-      main: '#dc004e', // A vibrant pink for secondary actions (customize as needed)
+      main: '#dc004e', 
     },
   },
   typography: {

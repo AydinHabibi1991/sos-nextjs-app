@@ -1,4 +1,3 @@
-// src/components/I18nProvider.tsx
 "use client";
 
 import { ReactNode, useEffect } from "react";
@@ -7,7 +6,6 @@ import i18n from "./i18n";
 
 export function I18nProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
-    // Ensure i18n is initialized on the client side
     i18n.init();
   }, []);
 

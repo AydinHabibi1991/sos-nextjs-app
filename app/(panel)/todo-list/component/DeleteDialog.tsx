@@ -1,4 +1,4 @@
-// src/components/todo/DeleteDialog.tsx
+
 import React from "react";
 import {
   Dialog,
@@ -22,7 +22,7 @@ export const DeleteDialog: React.FC<DeleteDialogProps> = ({
   onDelete,
 }) => {
   const { t, i18n } = useTranslation();
-  const isRtl = i18n.language === "fa"; // Check if language is Farsi for RTL
+  const isRtl = i18n.language === "fa"; 
 
   return (
     <Dialog
@@ -37,7 +37,7 @@ export const DeleteDialog: React.FC<DeleteDialogProps> = ({
           transition: "all 0.3s ease",
           width: { xs: "90%", sm: "auto" },
           maxWidth: "400px",
-          direction: isRtl ? "rtl" : "ltr", // RTL for Farsi
+          direction: isRtl ? "rtl" : "ltr", 
         },
       }}
     >

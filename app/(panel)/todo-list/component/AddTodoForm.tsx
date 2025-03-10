@@ -1,4 +1,4 @@
-// src/components/todo/AddTodoForm.tsx
+
 import React from "react";
 import { Box, TextField, Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
@@ -18,16 +18,16 @@ export const AddTodoForm: React.FC<AddTodoFormProps> = ({
   isLoading,
 }) => {
   const { t, i18n } = useTranslation();
-  const isRtl = i18n.language === "fa"; // Check if language is Farsi for RTL
+  const isRtl = i18n.language === "fa"; 
 
   return (
     <Box
       sx={{
         display: "flex",
-        flexDirection: { xs: "column", sm: isRtl ? "row-reverse" : "row" }, // Reverse for RTL
+        flexDirection: { xs: "column", sm: isRtl ? "row-reverse" : "row" }, 
         gap: 2,
         mb: { xs: 3, sm: 4 },
-        direction: isRtl ? "rtl" : "ltr", // RTL for Farsi
+        direction: isRtl ? "rtl" : "ltr", 
       }}
     >
       <TextField
@@ -46,7 +46,7 @@ export const AddTodoForm: React.FC<AddTodoFormProps> = ({
             "&:hover fieldset": {
               borderColor: "primary.main",
             },
-            textAlign: isRtl ? "right" : "left", // Align text right for RTL
+            textAlign: isRtl ? "right" : "left", 
           },
         }}
       />
@@ -55,8 +55,8 @@ export const AddTodoForm: React.FC<AddTodoFormProps> = ({
         color="primary"
         onClick={onAddTodo}
         disabled={isLoading || !newTodo.trim()}
-        startIcon={isRtl ? null : <AddIcon />} // Remove icon for RTL, or use an RTL-friendly icon
-        endIcon={isRtl ? <AddIcon /> : null} // Add icon at the end for RTL
+        startIcon={isRtl ? null : <AddIcon />} 
+        endIcon={isRtl ? <AddIcon /> : null} 
         aria-label={t("add")}
         sx={{
           borderRadius: 2,

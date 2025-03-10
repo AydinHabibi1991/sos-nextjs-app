@@ -1,4 +1,3 @@
-// src/components/todo/FilterTodos.tsx
 import React from "react";
 import { Box, ToggleButton, ToggleButtonGroup } from "@mui/material";
 import { FilterOption } from "@/types/todo";
@@ -16,7 +15,7 @@ export const FilterTodos: React.FC<FilterTodosProps> = ({
   disabled,
 }) => {
   const { t, i18n } = useTranslation();
-  const isRtl = i18n.language === "fa"; // Check if language is Farsi for RTL
+  const isRtl = i18n.language === "fa"; 
 
   const handleFilterChange = (
     event: React.MouseEvent<HTMLElement>,
@@ -33,7 +32,7 @@ export const FilterTodos: React.FC<FilterTodosProps> = ({
         display: "flex",
         justifyContent: "center",
         mb: { xs: 2, sm: 3 },
-        direction: isRtl ? "rtl" : "ltr", // RTL for Farsi
+        direction: isRtl ? "rtl" : "ltr", 
       }}
     >
       <ToggleButtonGroup

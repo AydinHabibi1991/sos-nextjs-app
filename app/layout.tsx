@@ -1,4 +1,3 @@
-// src/app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import ThemeClient from "./ThemeClient";
@@ -28,7 +27,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const cookieStore = await cookies(); // Await the Promise to get ReadonlyRequestCookies
+  const cookieStore = await cookies(); 
   const language = cookieStore.get("language")?.value || "en";
   const isRtl = language === "fa";
 
@@ -46,7 +45,7 @@ export default async function RootLayout({
         <I18nProvider>
           <ThemeClient>
             <Header />
-            {/* Placeholder to prevent content from being hidden under fixed header */}
+           
             <Toolbar />
             {children}
           </ThemeClient>

@@ -1,4 +1,3 @@
-// src/ThemeClient.tsx
 "use client";
 
 import { useEffect } from "react";
@@ -11,7 +10,6 @@ export default function ThemeClient({ children }: { children: React.ReactNode })
   const { i18n } = useTranslation();
   const isRtl = i18n.language === "fa";
 
-  // Create a dynamic theme based on the language direction
   const dynamicTheme = createTheme({
     ...theme,
     direction: isRtl ? "rtl" : "ltr",
@@ -23,7 +21,6 @@ export default function ThemeClient({ children }: { children: React.ReactNode })
     },
   });
 
-  // Update the document direction dynamically
   useEffect(() => {
     document.documentElement.dir = isRtl ? "rtl" : "ltr";
     document.documentElement.lang = i18n.language;

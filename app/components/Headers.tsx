@@ -1,4 +1,3 @@
-// src/components/Headers.tsx
 "use client";
 
 import React from "react";
@@ -26,7 +25,6 @@ export default function Header() {
           <Button color="inherit" component={Link} href="/todo-list">
             {t("todoList", { defaultValue: "لیست وظایف" })}
           </Button>
-          {/* Language Switcher with Flag Icons */}
           <Button
             color="inherit"
             onClick={() => changeLanguage("en")}
@@ -34,7 +32,7 @@ export default function Header() {
               minWidth: "auto",
               px: 1,
               py: 0.5,
-              fontSize: "1.2rem", // Adjust flag size
+              fontSize: "1.2rem", 
               bgcolor: i18n.language === "en" ? "rgba(255, 255, 255, 0.2)" : "transparent",
               borderRadius: 1,
               "&:hover": {
@@ -52,7 +50,7 @@ export default function Header() {
               minWidth: "auto",
               px: 1,
               py: 0.5,
-              fontSize: "1.2rem", // Adjust flag size
+              fontSize: "1.2rem",
               bgcolor: i18n.language === "fa" ? "rgba(255, 255, 255, 0.2)" : "transparent",
               borderRadius: 1,
               "&:hover": {

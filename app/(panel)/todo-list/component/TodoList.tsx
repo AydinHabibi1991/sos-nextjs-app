@@ -1,4 +1,3 @@
-// src/components/todo/TodoList.tsx
 import React from "react";
 import { Box, List, Typography, CircularProgress } from "@mui/material";
 import { Todo, FilterOption } from "../../../../types/todo";
@@ -21,7 +20,7 @@ export const TodoList: React.FC<TodoListProps> = ({
   onDeleteClick,
 }) => {
   const { t, i18n } = useTranslation();
-  const isRtl = i18n.language === "fa"; // Check if language is Farsi for RTL
+  const isRtl = i18n.language === "fa"; 
 
   const filteredTodos = todos.filter((todo) => {
     if (filter === "completed") return todo.completed;

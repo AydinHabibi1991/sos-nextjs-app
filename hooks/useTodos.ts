@@ -1,4 +1,3 @@
-// src/hooks/useTodos.ts
 import { useState, useEffect } from "react";
 import { Todo } from "../types/todo";
 import { fetchTodos, addTodo, toggleTodo, deleteTodo } from "../utils/api";
@@ -8,7 +7,6 @@ export const useTodos = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Fetch todos on mount
   useEffect(() => {
     const loadTodos = async () => {
       setIsLoading(true);
@@ -25,7 +23,6 @@ export const useTodos = () => {
     loadTodos();
   }, []);
 
-  // Add a new todo
   const handleAddTodo = async (title: string) => {
     if (!title.trim()) return;
     setError(null);
@@ -37,7 +34,6 @@ export const useTodos = () => {
     }
   };
 
-  // Toggle todo completion status
   const handleToggleTodo = async (id: number, completed: boolean) => {
     setError(null);
     try {
@@ -52,7 +48,6 @@ export const useTodos = () => {
     }
   };
 
-  // Delete a todo
   const handleDeleteTodo = async (id: number) => {
     setError(null);
     try {
