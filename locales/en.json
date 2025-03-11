@@ -1,20 +1,26 @@
 {
-    "taskManager": "Task Manager",
-    "newTask": "New Task",
-    "add": "Add",
-    "all": "All",
-    "completed": "Completed",
-    "incomplete": "Incomplete",
-    "noTasks": "No tasks found. Add a new task to get started!",
-    "confirmDeletion": "Confirm Deletion",
-    "deleteConfirmation": "Are you sure you want to delete this task? This action cannot be undone.",
-    "cancel": "Cancel",
-    "delete": "Delete",
-    "toggleTask": "Toggle completion of task: {{title}}",
-    "deleteTask": "Delete task: {{title}}",
-    "loadingTasks": "Loading tasks",
-    "language": {
-      "en": "English",
-      "fa": "Farsi"
-    }
-  }
+  "logo": "کمک رسان ایرانیان sos",
+  "home": "Home",
+  "todoList": "Todo List",
+  "healthcareCenters": "Healthcare Centers",
+  "branches": "Our Branches",
+  "faq": "FAQ",
+  "loginActivation": "Login & Activation",
+  "language": {
+    "en": "English",
+    "fa": "Farsi"
+  },
+  "newTask": "New Task",
+  "add": "Add",
+  "all": "All",
+  "completed": "Completed",
+  "incomplete": "Incomplete",
+  "noTasks": "No tasks found. Add a new task to get started!",
+  "confirmDeletion": "Confirm Deletion",
+  "deleteConfirmation": "Are you sure you want to delete this task? This action cannot be undone.",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "toggleTask": "Toggle completion of task: {{title}}",
+  "deleteTask": "Delete task: {{title}}",
+  "loadingTasks": "Loading tasks"
+}
