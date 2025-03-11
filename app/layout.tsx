@@ -34,6 +34,7 @@ export default async function RootLayout({
   return (
     <html lang={language} dir={isRtl ? "rtl" : "ltr"}>
       <head>
+      <link rel="icon" href="/Vector.svg" />
         <link
           href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap"
           rel="stylesheet"
