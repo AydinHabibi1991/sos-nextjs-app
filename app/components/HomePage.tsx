@@ -40,8 +40,8 @@ export default async function Home() {
                 sx={{
                   width: {
                     xs: "100%",
-                    sm: "calc((100% - 24px) / 2)", // Two cards per row with a 24px gap
-                    md: "calc((100% - 72px) / 4)",   // Four cards per row with three gaps (72px total)
+                    sm: "calc((100% - 24px) / 2)", 
+                    md: "calc((100% - 72px) / 4)",   
                   },
                 }}
               >

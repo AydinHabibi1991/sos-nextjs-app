@@ -24,16 +24,13 @@ export default function Header() {
       }}
     >
       <Toolbar sx={{ display: "flex", justifyContent: "space-between", px: 2 }}>
-        {/* Left: Logo */}
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Link href="/" passHref>
             <Image src="/Group.svg" alt="Logo" width={200} height={50} />
           </Link>
         </Box>
 
-        {/* Center: Navigation items */}
         <Box sx={{ flex: 1, display: "flex", justifyContent: "center" }}>
-          {/* Desktop version */}
           <Box
             sx={{
               display: { xs: "none", sm: "flex" },
@@ -68,7 +65,6 @@ export default function Header() {
               {t("faq", { defaultValue: "سوال‌‌های متداول" })}
             </Button>
           </Box>
-          {/* Mobile version */}
           <Box
             sx={{
               display: { xs: "flex", sm: "none" },
@@ -91,7 +87,6 @@ export default function Header() {
           </Box>
         </Box>
 
-        {/* Right: Login and language switchers */}
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
           <Box sx={{ display: { xs: "none", sm: "flex" } }}>
             <Button variant="contained" color="primary" component={Link} href="/login">
