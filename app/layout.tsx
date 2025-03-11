@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SOS Next.js App - Aydin Habibi",
+  title: "بیمه کمک رسان ایرانیان sos",
   description: "SOS NEXT PROJECT",
 };
 
