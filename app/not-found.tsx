@@ -23,7 +23,7 @@ export default function Custom404() {
             در دست ساخت
         </Typography>
         <Typography variant="body1" sx={{ mt: 1, color: "text.secondary" }}>
-        " این صفحه در حال حاضر در دست تعمیر و نگهداری برنامه‌ریزی شده می‌باشد.  به زودی بازخواهیم گشت."
+        این صفحه در حال حاضر در دست تعمیر و نگهداری برنامه‌ریزی شده می‌باشد.  به زودی بازخواهیم گشت.
         </Typography>
         <Link href="/" passHref>
           <Typography
