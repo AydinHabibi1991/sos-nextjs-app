@@ -11,6 +11,8 @@
     "fa": "Farsi"
   },
   "newTask": "New Task",
+  
+  "taskManager": "Task Manager",
   "add": "Add",
   "all": "All",
   "completed": "Completed",

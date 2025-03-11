@@ -25,7 +25,7 @@ export default function TodoListClient() {
   const { todos, isLoading, error, handleAddTodo, handleToggleTodo, handleDeleteTodo } =
     useTodos();
 
-  const isRtl = i18n.language === "fa"; 
+  const isRtl = i18n.language === "fa";
 
   const onAddTodo = () => {
     handleAddTodo(newTodo);
@@ -48,74 +48,82 @@ export default function TodoListClient() {
   return (
     <Box
       sx={{
-        maxWidth: 800,
-        margin: "0 auto",
-        p: { xs: 2, sm: 4 },
-        bgcolor: "grey.100",
+        width: "100%",
+        background: "linear-gradient(135deg, #f5f7fa, #c3cfe2)",
         minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        gap: { xs: 2, sm: 3 },
-        direction: isRtl ? "rtl" : "ltr", 
+        py: { xs: 2, sm: 4 },
       }}
     >
-      <Paper
-        elevation={3}
+      <Box
         sx={{
-          p: { xs: 2, sm: 4 },
-          borderRadius: 4,
-          bgcolor: "white",
-          transition: "transform 0.3s ease",
-          "&:hover": {
-            transform: { sm: "translateY(-5px)" },
-          },
+          maxWidth: 800,
+          mx: "auto",
+          px: { xs: 2, sm: 4 },
+          display: "flex",
+          flexDirection: "column",
+          gap: { xs: 2, sm: 3 },
+          direction: isRtl ? "rtl" : "ltr",
         }}
       >
-        <Typography
-          variant="h4"
-          gutterBottom
-          align="center"
+        <Paper
+          elevation={3}
           sx={{
-            fontWeight: "bold",
-            color: "primary.main",
-            fontSize: { xs: "1.5rem", sm: "2rem" },
+            p: { xs: 2, sm: 4 },
+            borderRadius: 4,
+            bgcolor: "white",
+            transition: "transform 0.3s ease, box-shadow 0.3s ease",
+            "&:hover": {
+              transform: "translateY(-5px)",
+              boxShadow: 6,
+            },
           }}
         >
-          {t("taskManager")}
-        </Typography>
+          <Typography
+            variant="h4"
+            gutterBottom
+            align="center"
+            sx={{
+              fontWeight: "bold",
+              color: "primary.main",
+              fontSize: { xs: "1.5rem", sm: "2rem" },
+            }}
+          >
+            {t("taskManager")}
+          </Typography>
 
-        {error && (
-          <Alert severity="error" sx={{ mb: { xs: 2, sm: 3 } }}>
-            {error}
-          </Alert>
-        )}
+          {error && (
+            <Alert severity="error" sx={{ mb: { xs: 2, sm: 3 } }}>
+              {error}
+            </Alert>
+          )}
 
-        <AddTodoForm
-          newTodo={newTodo}
-          onNewTodoChange={setNewTodo}
-          onAddTodo={onAddTodo}
-          isLoading={isLoading}
+          <AddTodoForm
+            newTodo={newTodo}
+            onNewTodoChange={setNewTodo}
+            onAddTodo={onAddTodo}
+            isLoading={isLoading}
+          />
+
+          <FilterTodos filter={filter} onFilterChange={setFilter} disabled={isLoading} />
+
+          <TodoList
+            todos={todos}
+            filter={filter}
+            isLoading={isLoading}
+            onToggleTodo={handleToggleTodo}
+            onDeleteClick={onDeleteClick}
+          />
+        </Paper>
+
+        <DeleteDialog
+          open={deleteDialogOpen}
+          onClose={() => {
+            setDeleteDialogOpen(false);
+            setTodoToDelete(null);
+          }}
+          onDelete={onDeleteConfirm}
         />
-
-        <FilterTodos filter={filter} onFilterChange={setFilter} disabled={isLoading} />
-
-        <TodoList
-          todos={todos}
-          filter={filter}
-          isLoading={isLoading}
-          onToggleTodo={handleToggleTodo}
-          onDeleteClick={onDeleteClick}
-        />
-      </Paper>
-
-      <DeleteDialog
-        open={deleteDialogOpen}
-        onClose={() => {
-          setDeleteDialogOpen(false);
-          setTodoToDelete(null);
-        }}
-        onDelete={onDeleteConfirm}
-      />
+      </Box>
     </Box>
   );
 }
