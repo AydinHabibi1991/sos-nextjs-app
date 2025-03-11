@@ -1,4 +1,3 @@
-// src/utils/api.ts
 import { Todo } from "../types/todo";
 
 export const fetchTodos = async (): Promise<Todo[]> => {
